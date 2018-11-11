@@ -1,0 +1,80 @@
+/*INDEX*/
+/*HEADER*/
+/*MENU*/
+/*TABLE*/
+/*FOOTER*/
+
+body {
+    padding: 0px;
+    margin: 0px;
+}
+
+
+/*HEADER*/
+.card-header{
+  background-color: #212121;
+  position: fixed;
+  width: 100%;
+}
+
+.card-header > h2{
+  color: white; 
+  text-align: left;
+}
+
+/*MENU*/
+.menu-container {
+  position: fixed;
+  width: 80%;
+  left: 10%;
+}
+
+.table-container{
+  position: relative;
+  background-color: red;
+  width: 100%;
+}
+
+td,th {
+  text-align: center;
+}
+
+/*TABLE*/
+#records-table {
+  position: relative;
+  width: 80%;
+  left: 10%;
+}
+
+#records-table table {
+  width: 100%;
+}
+
+#records-table th,
+#records-table td {
+  width: 200px;
+}
+
+#records-table thead> tr {
+  position: relative;
+  display: block;
+}
+
+#records-table tbody {
+  display: block;
+  height: 300px;
+  overflow: auto;
+}
+.td-action:hover {
+    background-color: #E1F5FE;
+    cursor: pointer;
+  }
+
+/*FOOTER*/
+.main-footer {
+    background-color: #212121;
+    color: white;
+    position: fixed;
+    bottom: 1px;
+    width: 100%;
+}
