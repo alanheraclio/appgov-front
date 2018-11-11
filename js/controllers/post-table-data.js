@@ -46,4 +46,10 @@ function printValues(){
         "\nFuente Financiera: " + postData.fuente_financiera +
         "\nNumero de Obra: " + postData.no_obra +
         "\nEjercicio: " + postData.ejercicio);
+
+  $http.post("159.65.98.32/api/obras", {postData}).success(function(respuesta){
+  console.log(respuesta);
+});
 }
+
+
