@@ -18,10 +18,10 @@ function validateUser(){
 
 	if (userEmail == "admin" && userPass == "4321") {
 		// alert("you are admin!");
-		location.replace("http://127.0.0.1:8887/table.html");
+		location.replace("http://159.65.98.32/appgov-front/table.html");
 	}
 	else if (userEmail == "user" && userPass == "1234") {
-		location.replace("http://127.0.0.1:8887/table2.html");
+		location.replace("http://159.65.98.32/appgov-front/table2.html");
 		// alert("you are user!");
 	}
 	else{

@@ -58,10 +58,9 @@
 <!-- MENU -->
   <div class="menu-container">
      <h2 style="text-align: left;">Registros Actuales</h2>
-     <p style="text-align: left;"><strong>Auditor:</strong> Aqui puedes consultar los registros actuales:</p>
+     <p style="text-align: left;"><strong>Auditor:</strong> Aqui puedes consultar o agregar el progreso de las obras actuales:</p>
       <div  class="menu-button-container"  style="width: 60%; float: left; text-align: left;">
-        <span>'</span>
-        <!-- <button type="button" class="btn btn-dark" data-toggle="modal" data-target=".bd-example-modal-lg" onclick="newRegister()">Nuevo Registro</button> -->
+        <p>'</p>
       </div>
       <div class="input-group" style="width: 40%; float: left;">
         <div class="input-group-prepend">
@@ -84,28 +83,24 @@
           <tr>
             <th>Número de<br/>Archivo</th>
             <th>Número de<br/>Expediente</th>
-            <th>Número de<br/>Obra</th>
-            <th>Localidad<br/>o Estado</th>
-            <th>Fecha de<br/>Inicio</th>
+            <th style="width: 200px;">Número de<br/>Obra</th>
+            <th style="width: 400px;">Localidad<br/>o Estado</th>
             <th>Inicio<br/>Programado</th>
+            <th>Termino<br/>Programado</th>
             <th>Consultar<br/>Progreso</th>
-<!--             <th>Agregar<br/>Progreso</th>
-            <th>Editar<br/>Registro</th>
-            <th>Borrar<br/>Registro</th> -->
+            <th>Agregar<br/>Progreso</th>
           </tr>
         </thead>
         <tbody ng-controller="myCtrl">
             <tr ng-repeat="x in records | filter : test">
-              <td id="numero-archivo{{x.id}}">{{x.archivo}}</td>
+              <td id="numero-archivo{{x.id}}">{{x.id}}</td>
               <td id="numero-expediente{{x.id}}">{{x.expediente}}</td>
               <td id="numero-obra{{x.id}}">{{x.no_obra}}</td>
               <td id="localidad{{x.id}}">{{x.localidad}}</td>
-              <td id="localidad{{x.id}}">{{x.created_at}}</td>
-              <td id="localidad{{x.id}}">{{x.inicio_programado}}</td>
+              <td id="inicio-programado{{x.id}}">{{x.inicio_programado}}</td>
+              <td id="termino-programado{{x.id}}">{{x.termino_programado}}</td>
               <td id="progress-{{x.id}}" class="td-action" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter" onClick="reply_click(this.id)"><span class="oi oi-eye"></span></td>
-<!--               <td class="td-action" data-toggle="modal" data-target="#newProgressModal"><span class="oi oi-document"></span></td>
-              <td id="update-{{x.id}}" class="td-action" data-toggle="modal" data-target=".bd-example-modal-lg"  onClick="getFormData(this.id)"><span class="oi oi-pencil"></span></td>
-              <td id="delete-{{x.id}}" class="td-action" onclick="deleteRecord(this.id)"><span class="oi oi-trash"></span></td> -->
+              <td class="td-action" data-toggle="modal" data-target="#newProgressModal"><span class="oi oi-document"></span></td>
             </tr>
           </tbody>
     </table>
@@ -296,9 +291,28 @@
   </div>
 </div>
 
-
 </body>
 <script src="js/controllers/post-table-data.js"></script>
 <script src="js/controllers/put-table-data.js"></script>
 <script src="js/controllers/delete-table-data.js"></script>
+<script>
+  function action1(){
+    alert("check it");
+  }
+  $( document ).ready(function() {
+    setTimeout(function(){ 
+      //DANGER
+      document.getElementsByTagName("tr")[1].setAttribute("class", "table-danger");
+      document.getElementsByTagName("tr")[1].setAttribute("data-toggle", "popover");
+      document.getElementsByTagName("tr")[1].setAttribute("title", "¡Este progreso ha caducado!");
+      //WARNING
+      document.getElementsByTagName("tr")[4].setAttribute("class", "table-warning");
+      document.getElementsByTagName("tr")[4].setAttribute("data-toggle", "popover");
+      document.getElementsByTagName("tr")[4].setAttribute("title", "¡Se debe Tomar accion rapidamente!");
+      alert("¡Se debe tomar accion en algunas obras!"); 
+    }, 4000);
+    // document.getElementsByTagName("tr")[1].setAttribute("class", "table-warning");
+    // console.log( "ready!" );
+});
+</script>
 </html>
