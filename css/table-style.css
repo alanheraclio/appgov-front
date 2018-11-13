@@ -22,6 +22,20 @@ body {
   text-align: left;
 }
 
+#log-out-button {
+  position: absolute; 
+  width: 5%; 
+  left: 90%; 
+  top: 1px;
+  border-radius: 15px; 
+  top: 40px;
+  cursor: pointer;
+}
+
+#log-out-button:hover {
+  background-color: #424242;
+}
+
 /*MENU*/
 .menu-container {
   position: fixed;
