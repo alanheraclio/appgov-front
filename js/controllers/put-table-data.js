@@ -61,5 +61,6 @@ var data = {
 	.catch(error => console.error('Error:', error))
 	.then(response => console.log('Success:', response));
 
-	alert("¡datos actualizados! en: "+urlPUT);
+	alert("¡datos actualizados!");
+	location.reload();
 }
