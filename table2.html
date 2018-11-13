@@ -12,7 +12,7 @@
 <!-- MODAL CHECK PROGRESS -->
 
 <head>
-  <title>Bootstrap Example</title>
+  <title>Skycrud</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- EXTERNAL CDN -->
@@ -302,17 +302,36 @@
   $( document ).ready(function() {
     setTimeout(function(){ 
       //DANGER
-      document.getElementsByTagName("tr")[1].setAttribute("class", "table-danger");
-      document.getElementsByTagName("tr")[1].setAttribute("data-toggle", "popover");
-      document.getElementsByTagName("tr")[1].setAttribute("title", "¡Este progreso ha caducado!");
+      var today = new Date();
+      console.log("today: "+today);
+      var today2 = today.setDate(5);
+      console.log("today2: "+today2);
+      var mes = today.getUTCMonth() + 1;
+      var dia = today.getUTCDate();
+      var anio = today.getUTCFullYear();
+      var hoy = anio + "-" + mes + "-" + dia;
+      console.log("hoy es: "+hoy);
+      hoy = "1976-09-17";
+
+      totalRows = $("#records-table tbody tr").length;
+      console.log(totalRows);
+
+      for (var i = 1; i < totalRows; i++) {
+        // console.log(i);
+        var domeDate = document.getElementsByTagName("tr")[i].childNodes[9].innerText;
+          if (hoy == domeDate.trim()) {
+          document.getElementsByTagName("tr")[i].setAttribute("class", "table-danger");
+          document.getElementsByTagName("tr")[i].setAttribute("data-toggle", "popover");
+          document.getElementsByTagName("tr")[i].setAttribute("title", "¡Se debe Tomar accion rapidamente!");
+      }
+      }
+
       //WARNING
       document.getElementsByTagName("tr")[4].setAttribute("class", "table-warning");
       document.getElementsByTagName("tr")[4].setAttribute("data-toggle", "popover");
-      document.getElementsByTagName("tr")[4].setAttribute("title", "¡Se debe Tomar accion rapidamente!");
+      document.getElementsByTagName("tr")[4].setAttribute("title", "¡Considere tomar accion proximamente!");
       alert("¡Se debe tomar accion en algunas obras!"); 
     }, 4000);
-    // document.getElementsByTagName("tr")[1].setAttribute("class", "table-warning");
-    // console.log( "ready!" );
 });
 </script>
 </html>

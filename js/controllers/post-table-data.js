@@ -1,5 +1,5 @@
 console.log("post-table-data Running...");
-
+let url4 = 'http://159.65.98.32/api/obras';
 function newRegister(){
   document.getElementById("myLargeModalLabel").innerHTML = "Nuevo Registro";
 }
@@ -9,8 +9,8 @@ let archivo = "";
 let gaveta = "";
 let expediente = "";
 let localidad = "";
-let registro_de_oficios = ""
-let fuente_financiera = ""
+let registro_de_oficios = "";
+let fuente_financiera = "";
 let no_obra = "";
 let ejercicio = "";
 
@@ -47,9 +47,18 @@ function printValues(){
         "\nNumero de Obra: " + postData.no_obra +
         "\nEjercicio: " + postData.ejercicio);
 
-  $http.post("159.65.98.32/api/obras", {postData}).success(function(respuesta){
-  console.log(respuesta);
-});
+var data = {expediente: '1212'};
+
+fetch(url4, {
+  method: 'POST', // or 'PUT'
+  body: JSON.stringify(data), // data can be `string` or {object}!
+  headers:{
+    'Content-Type': 'application/json'
+  }
+}).then(res => res.json())
+.catch(error => console.error('Error:', error))
+.then(response => console.log('Success:', response));
+
 }
 
 
