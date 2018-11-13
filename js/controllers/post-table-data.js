@@ -44,16 +44,16 @@ var data = {
     termino_programado: termino_programado
 };
 
-  // alert("Numero de Archivo: " + data.archivo +
-  //       "\nNumero de Gaveta: " + data.gaveta +
-  //       "\nNumero de Expediente: " + data.expediente +
-  //       "\nLocalidad: " + data.localidad +
-  //       "\nRegistro de Oficio: " + data.registro_de_oficios +
-  //       "\nFuente Financiera: " + data.fuente_financiera +
-  //       "\nNumero de Obra: " + data.no_obra +
-  //       "\nEjercicio: " + data.inicio_programado +
-  //       "\nEjercicio: " + data.termino_programado +
-  //       "\nEjercicio: " + data.ejercicio);
+  alert("Numero de Archivo: " + data.archivo +
+        "\nNumero de Gaveta: " + data.gaveta +
+        "\nNumero de Expediente: " + data.expediente +
+        "\nLocalidad: " + data.localidad +
+        "\nRegistro de Oficio: " + data.registro_de_oficios +
+        "\nFuente Financiera: " + data.fuente_financiera +
+        "\nNumero de Obra: " + data.no_obra +
+        "\nInicio Programado: " + data.inicio_programado +
+        "\nTermino Programado: " + data.termino_programado +
+        "\nEjercicio: " + data.ejercicio);
 
 fetch(url4, {
   method: 'POST',
