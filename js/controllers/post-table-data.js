@@ -26,8 +26,28 @@ function printValues(){
   // ejercicio = document.getElementById("registro-ejercicio").value;
   ejercicio = document.getElementById("registro-ejercicio").options[document.getElementById("registro-ejercicio").selectedIndex].text;
 
-  var postData = {
-    id: 1,
+  // var postData = {
+  //   id: 1,
+  //   archivo: archivo,
+  //   gaveta: gaveta,
+  //   expediente: expediente,
+  //   localidad: localidad,
+  //   registro_de_oficios: registro_de_oficios,
+  //   fuente_financiera: fuente_financiera,
+  //   no_obra: no_obra,
+  //   ejercicio: ejercicio
+  // };
+
+  // alert("Numero de Archivo: " + postData.archivo +
+  //       "\nNumero de Gaveta: " + postData.gaveta +
+  //       "\nNumero de Expediente: " + postData.expediente +
+  //       "\nLocalidad: " + postData.localidad +
+  //       "\nRegistro de Oficio: " + postData.registro_de_oficios +
+  //       "\nFuente Financiera: " + postData.fuente_financiera +
+  //       "\nNumero de Obra: " + postData.no_obra +
+  //       "\nEjercicio: " + postData.ejercicio);
+
+var data = {
     archivo: archivo,
     gaveta: gaveta,
     expediente: expediente,
@@ -36,18 +56,7 @@ function printValues(){
     fuente_financiera: fuente_financiera,
     no_obra: no_obra,
     ejercicio: ejercicio
-  };
-
-  alert("Numero de Archivo: " + postData.archivo +
-        "\nNumero de Gaveta: " + postData.gaveta +
-        "\nNumero de Expediente: " + postData.expediente +
-        "\nLocalidad: " + postData.localidad +
-        "\nRegistro de Oficio: " + postData.registro_de_oficios +
-        "\nFuente Financiera: " + postData.fuente_financiera +
-        "\nNumero de Obra: " + postData.no_obra +
-        "\nEjercicio: " + postData.ejercicio);
-
-var data = {expediente: '1212'};
+};
 
 fetch(url4, {
   method: 'POST', // or 'PUT'
