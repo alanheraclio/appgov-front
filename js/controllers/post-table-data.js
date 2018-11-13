@@ -13,6 +13,8 @@ let registro_de_oficios = "";
 let fuente_financiera = "";
 let no_obra = "";
 let ejercicio = "";
+let inicio_programado = "";
+let termino_programado = "";
 
 function printValues(){
   archivo = document.getElementById("registro-archivo").value;
@@ -25,27 +27,9 @@ function printValues(){
   no_obra = document.getElementById("registro-numero-obra").value;
   // ejercicio = document.getElementById("registro-ejercicio").value;
   ejercicio = document.getElementById("registro-ejercicio").options[document.getElementById("registro-ejercicio").selectedIndex].text;
+  inicio_programado = document.getElementById("registro-inicio-programado").value;
+  termino_programado = document.getElementById("registro-termino-programado").value;
 
-  // var postData = {
-  //   id: 1,
-  //   archivo: archivo,
-  //   gaveta: gaveta,
-  //   expediente: expediente,
-  //   localidad: localidad,
-  //   registro_de_oficios: registro_de_oficios,
-  //   fuente_financiera: fuente_financiera,
-  //   no_obra: no_obra,
-  //   ejercicio: ejercicio
-  // };
-
-  // alert("Numero de Archivo: " + postData.archivo +
-  //       "\nNumero de Gaveta: " + postData.gaveta +
-  //       "\nNumero de Expediente: " + postData.expediente +
-  //       "\nLocalidad: " + postData.localidad +
-  //       "\nRegistro de Oficio: " + postData.registro_de_oficios +
-  //       "\nFuente Financiera: " + postData.fuente_financiera +
-  //       "\nNumero de Obra: " + postData.no_obra +
-  //       "\nEjercicio: " + postData.ejercicio);
 
 var data = {
     archivo: archivo,
@@ -55,12 +39,25 @@ var data = {
     registro_de_oficios: registro_de_oficios,
     fuente_financiera: fuente_financiera,
     no_obra: no_obra,
-    ejercicio: ejercicio
+    ejercicio: ejercicio,
+    inicio_programado: inicio_programado,
+    termino_programado: termino_programado
 };
 
+  // alert("Numero de Archivo: " + data.archivo +
+  //       "\nNumero de Gaveta: " + data.gaveta +
+  //       "\nNumero de Expediente: " + data.expediente +
+  //       "\nLocalidad: " + data.localidad +
+  //       "\nRegistro de Oficio: " + data.registro_de_oficios +
+  //       "\nFuente Financiera: " + data.fuente_financiera +
+  //       "\nNumero de Obra: " + data.no_obra +
+  //       "\nEjercicio: " + data.inicio_programado +
+  //       "\nEjercicio: " + data.termino_programado +
+  //       "\nEjercicio: " + data.ejercicio);
+
 fetch(url4, {
-  method: 'POST', // or 'PUT'
-  body: JSON.stringify(data), // data can be `string` or {object}!
+  method: 'POST',
+  body: JSON.stringify(data),
   headers:{
     'Content-Type': 'application/json'
   }
@@ -68,6 +65,7 @@ fetch(url4, {
 .catch(error => console.error('Error:', error))
 .then(response => console.log('Success:', response));
 
+alert("Datos Ingresados correctamente");
+location.reload();
+
 }
-
-
