@@ -82,8 +82,8 @@
         <thead>
           <tr>
             <th>Número de<br/>Archivo</th>
-            <th>Número de<br/>Expediente</th>
-            <th style="width: 200px;">Número de<br/>Obra</th>
+            <th style="width: 150px;">Número de<br/>Expediente</th>
+            <th style="width: 400px;">Número de<br/>Obra</th>
             <th style="width: 400px;">Localidad<br/>o Estado</th>
             <th>Inicio<br/>Programado</th>
             <th>Termino<br/>Programado</th>
@@ -92,12 +92,12 @@
           </tr>
         </thead>
         <tbody ng-controller="myCtrl">
-            <tr ng-repeat="x in records | filter : test">
-              <td id="numero-archivo{{x.id}}">{{x.id}}</td>
-              <td id="numero-expediente{{x.id}}">{{x.expediente}}</td>
+            <tr ng-repeat="x in records | filter : test | orderBy: '-id'">
+              <td id="numero-archivo{{x.id}}">{{x.archivo}}</td>
+              <td style="width: 150px;" id="numero-expediente{{x.id}}">{{x.expediente}}</td>
               <td id="numero-obra{{x.id}}">{{x.no_obra}}</td>
               <td id="localidad{{x.id}}">{{x.localidad}}</td>
-              <td id="inicio-programado{{x.id}}">{{x.inicio_programado}}</td>
+              <td id="inicio-programado{{x.id}}">{{x.termino_programado}}</td>
               <td id="termino-programado{{x.id}}">{{x.termino_programado}}</td>
               <td id="progress-{{x.id}}" class="td-action" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter" onClick="reply_click(this.id)"><span class="oi oi-eye"></span></td>
               <td class="td-action" data-toggle="modal" data-target="#newProgressModal"><span class="oi oi-document"></span></td>
@@ -226,43 +226,5 @@
 <script src="js/controllers/post-table-data.js"></script>
 <script src="js/controllers/put-table-data.js"></script>
 <script src="js/controllers/delete-table-data.js"></script>
-<script>
-  function action1(){
-    alert("check it");
-  }
-  $( document ).ready(function() {
-    setTimeout(function(){ 
-      //DANGER
-      var today = new Date();
-      console.log("today: "+today);
-      var today2 = today.setDate(5);
-      console.log("today2: "+today2);
-      var mes = today.getUTCMonth() + 1;
-      var dia = today.getUTCDate();
-      var anio = today.getUTCFullYear();
-      var hoy = anio + "-" + mes + "-" + dia;
-      console.log("hoy es: "+hoy);
-      hoy = "1976-09-17";
-
-      totalRows = $("#records-table tbody tr").length;
-      console.log(totalRows);
-
-      for (var i = 1; i < totalRows; i++) {
-        // console.log(i);
-        var domeDate = document.getElementsByTagName("tr")[i].childNodes[9].innerText;
-          if (hoy == domeDate.trim()) {
-          document.getElementsByTagName("tr")[i].setAttribute("class", "table-danger");
-          document.getElementsByTagName("tr")[i].setAttribute("data-toggle", "popover");
-          document.getElementsByTagName("tr")[i].setAttribute("title", "¡Se debe Tomar accion rapidamente!");
-      }
-      }
-
-      //WARNING
-      document.getElementsByTagName("tr")[4].setAttribute("class", "table-warning");
-      document.getElementsByTagName("tr")[4].setAttribute("data-toggle", "popover");
-      document.getElementsByTagName("tr")[4].setAttribute("title", "¡Considere tomar accion proximamente!");
-      alert("¡Se debe tomar accion en algunas obras!"); 
-    }, 4000);
-});
-</script>
+<script src="js/table2-script.js"></script>
 </html>

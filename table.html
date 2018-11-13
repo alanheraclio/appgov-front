@@ -92,7 +92,7 @@
           </tr>
         </thead>
         <tbody ng-controller="myCtrl">
-            <tr ng-repeat="x in records | filter : test">
+            <tr ng-repeat="x in records | filter : test | orderBy: '-id'">
               <td id="numero-archivo{{x.id}}">{{x.id}}</td>
               <td id="numero-expediente{{x.id}}">{{x.expediente}}</td>
               <td id="numero-obra{{x.id}}">{{x.no_obra}}</td>
@@ -159,11 +159,11 @@
           </div>
         </div>
         <div class="form-row">
-          <div class="col-md-6 mb-3">
+          <div class="col-md-4 mb-3">
             <label for="validationDefault04">No. Obra</label>
             <input type="text" class="form-control" id="registro-numero-obra" placeholder="12345">
           </div>
-          <div class="col-md-6 mb-2">
+          <div class="col-md-4 mb-3">
             <label for="validationDefault05">Ejercicio</label>
             <div class="input-group mb-3">
               <select class="custom-select" id="registro-ejercicio">
@@ -174,14 +174,8 @@
               </select>
             </div>
           </div>
-        </div>
-        <div class="form-row">
-          <div class="col-md-6 mb-3">
-            <label for="validationDefault06">Inicio Programado</label>
-            <input type="date" class="form-control" id="registro-inicio-programado" placeholder="">
-          </div>
-          <div class="col-md-6 mb-2">
-              <label for="validationDefault07">Termino Programado</label>
+          <div class="col-md-4 mb-3">
+              <label for="validationDefault07">Inicio Programado</label>
               <input type="date" class="form-control" id="registro-termino-programado" placeholder="">
           </div>
         </div>
