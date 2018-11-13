@@ -51,7 +51,7 @@ var data = {
     termino_programado: termino_programado
 };
 
-	fetch(url7, {
+	fetch(urlPUT, {
 	  method: 'PUT',
 	  body: JSON.stringify(data),
 	  headers:{
