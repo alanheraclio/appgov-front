@@ -2,6 +2,8 @@ console.log("post-table-data Running...");
 let url4 = 'http://159.65.98.32/api/obras';
 function newRegister(){
   document.getElementById("myLargeModalLabel").innerHTML = "Nuevo Registro";
+  document.getElementById("guardar-registro").style.display = 'block';
+  document.getElementById("actualizar-registro").style.display = 'none';
 }
 
 // GETTING VALUES FRO POST FUNCTION

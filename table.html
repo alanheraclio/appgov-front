@@ -129,25 +129,25 @@
         <div class="form-row">
           <div class="col-md-4 mb-3">
             <label for="validationDefault01">Archivo</label>
-            <input type="text" class="form-control" id="registro-archivo" placeholder="29" value="29">
+            <input type="text" class="form-control" id="registro-archivo" placeholder="">
           </div>
           <div class="col-md-4 mb-3">
             <label for="validationDefault02">Gaveta</label>
-            <input type="text" class="form-control" id="registro-gaveta" placeholder="gaveta" value="gaveta" required>
+            <input type="text" class="form-control" id="registro-gaveta" placeholder="">
           </div>
           <div class="col-md-4 mb-3">
             <label for="validationDefault02">Expediente</label>
-            <input type="text" class="form-control" id="registro-expediente" placeholder="expediente" value="expediente" required>
+            <input type="text" class="form-control" id="registro-expediente" placeholder="">
           </div>
         </div>
         <div class="form-row">
           <div class="col-md-4 mb-3">
             <label for="validationDefault03">Localidad</label>
-            <input type="text" class="form-control" id="registro-localidad" placeholder="Aguascalientes">
+            <input type="text" class="form-control" id="registro-localidad" placeholder="">
           </div>
           <div class="col-md-4 mb-3">
             <label for="validationDefault04">Registro de Oficios</label>
-            <input type="text" class="form-control" id="registro-oficios" placeholder="oficio">
+            <input type="text" class="form-control" id="registro-oficios" placeholder="">
           </div>
           <div class="col-md-4 mb-3">
             <label for="validationDefault05">Fuente Financiera</label>
@@ -164,7 +164,7 @@
         <div class="form-row">
           <div class="col-md-4 mb-3">
             <label for="validationDefault04">No. Obra</label>
-            <input type="text" class="form-control" id="registro-numero-obra" placeholder="12345">
+            <input type="text" class="form-control" id="registro-numero-obra" placeholder="">
           </div>
           <div class="col-md-4 mb-3">
             <label for="validationDefault05">Ejercicio</label>
@@ -182,7 +182,8 @@
               <input type="date" class="form-control" id="registro-termino-programado" placeholder="">
           </div>
         </div>
-        <button class="btn btn-primary" type="submit" onclick="printValues()">Guardar Archivo</button>
+        <button id="guardar-registro" class="btn btn-success" type="submit" onclick="printValues()">Guardar Archivo</button>
+        <button id="actualizar-registro" class="btn btn-primary" type="submit" onclick="updateValues()">Actualizar Archivo</button>
       </form>
       </div>
     </div>
