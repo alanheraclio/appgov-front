@@ -27,7 +27,7 @@ function printValues(){
   no_obra = document.getElementById("registro-numero-obra").value;
   // ejercicio = document.getElementById("registro-ejercicio").value;
   ejercicio = document.getElementById("registro-ejercicio").options[document.getElementById("registro-ejercicio").selectedIndex].text;
-  inicio_programado = document.getElementById("registro-inicio-programado").value;
+  // inicio_programado = document.getElementById("registro-inicio-programado").value;
   termino_programado = document.getElementById("registro-termino-programado").value;
 
 
@@ -40,7 +40,7 @@ var data = {
     fuente_financiera: fuente_financiera,
     no_obra: no_obra,
     ejercicio: ejercicio,
-    inicio_programado: inicio_programado,
+    // inicio_programado: inicio_programado,
     termino_programado: termino_programado
 };
 
