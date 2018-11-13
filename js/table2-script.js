@@ -19,21 +19,32 @@ function action1(){
 
       for (var i = 1; i < totalRows; i++) {
         var domeDate = document.getElementsByTagName("tr")[i].childNodes[9].innerText;
-          if (hoy == domeDate.trim()) {
+        var domeDay2 = domeDate.trim();
+        var domeDay = new Date(domeDay2);
+        var hoyMilisencond = today.getTime();
+        var domeDayMilisencond = domeDay.getTime();
+        console.log("hoyMilisencond: "+hoyMilisencond);
+        console.log("domeDayMilisencond: "+domeDayMilisencond);
+        var dayDifference = hoyMilisencond - domeDayMilisencond;
+        console.log("dayDifference: "+(dayDifference / 86400000));
+
+      	  if (  ( (dayDifference / 86400000) <= 5 ) && ((dayDifference / 86400000) > 1)  ) {
+      	  //WARNING
+	      document.getElementsByTagName("tr")[i].setAttribute("class", "table-warning");
+	      document.getElementsByTagName("tr")[i].setAttribute("data-toggle", "popover");
+	      document.getElementsByTagName("tr")[i].setAttribute("title", "¡Considere tomar accion proximamente!");
+      	  }
+      	  else if (hoy == domeDay2) {
+          //DANGER
           document.getElementsByTagName("tr")[i].setAttribute("class", "table-danger");
           document.getElementsByTagName("tr")[i].setAttribute("data-toggle", "popover");
           document.getElementsByTagName("tr")[i].setAttribute("title", "¡Se debe Tomar accion rapidamente!");
-          // console.log(hoy + "si es igual que:"+domeDate);
+          console.log(hoy + "si es igual que:"+domeDate);
+      	  }
+	      else {
+	        // console.log(hoy + "no es igual que:"+domeDate);
+	      }
       }
-      else {
-        // console.log(hoy + "no es igual que:"+domeDate);
-      }
-      }
-
-      //WARNING
-      document.getElementsByTagName("tr")[4].setAttribute("class", "table-warning");
-      document.getElementsByTagName("tr")[4].setAttribute("data-toggle", "popover");
-      document.getElementsByTagName("tr")[4].setAttribute("title", "¡Considere tomar accion proximamente!");
       alert("¡Se debe tomar accion en algunas obras!"); 
     }, 4000);
 });
