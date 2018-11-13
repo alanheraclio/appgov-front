@@ -66,6 +66,7 @@ fetch(url4, {
 .then(response => console.log('Success:', response));
 
 alert("Datos Ingresados correctamente");
+console.log("Datos Ingresados correctamente");
 location.reload();
 
 }
