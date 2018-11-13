@@ -53,7 +53,7 @@ function action1(){
       if (countDangers > 0) {
       	alert("¡Se debe tomar accion en "+countDangers+" obras el dia de hoy!");
       }
-      if (countDangers > 0) {
+      if (countWarnings > 0) {
       	alert("¡Se debe tomar accion en "+countWarnings+" obras en 5 dias!");
       }
     }, 4000);
